@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me Page | Responsive</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+      }
+
+      .content .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .right {
+        height: 100%;
+        width: 55%;
+        padding: 5vw 4vw;
+      }
+
+      .right h1 {
+        font-size: 4vw;
+        line-height: 4.4vw;
+      }
+
+      .right h1 span {
+        color: #ff5e32;
+      }
+
+      .right p {
+        font-size: 1.2vw;
+        font-weight: 600;
+        color: white;
+        width: 80%;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+      }
+
+      .left {
+        height: 100%;
+        width: 45%;
+        padding: 5vw 4vw;
+      }
+
+      .left img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .icon {
+        display: flex;
+        gap: 20px;
+      }
+
+      .icon img {
+        height: 32px;
+        width: 32px;
+        object-fit: contain;
+        cursor: pointer;
+      }
+
+      .icon img:hover {
+        /* filter: grayscale(1); */
+        filter: blur(0.5px);
+      }
+
+      /* Responsive Code */
+
+      @media (max-width: 425px) {
+        .content {
+          flex-direction: column;
+        }
+
+        .right {
+          width: 100%;
+          height: 45%;
+          padding: 4vw 6vw;
+        }
+
+        .right h1 {
+          font-size: 9vw;
+          line-height: 9vw;
+        }
+
+        .right p {
+          font-size: 4vw;
+          width: 100%;
+          margin: 5vw 0;
+        }
+
+        .left {
+          width: 100%;
+          height: 55%;
+        }
+      }
+
+      /* Responsive Code */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+      }
+
+      .glow-on-hover {
+        width: 220px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+      }
+
+      .glow-on-hover:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      .glow-on-hover:active {
+        color: #000;
+      }
+
+      .glow-on-hover:active:after {
+        background: transparent;
+      }
+
+      .glow-on-hover:hover:before {
+        opacity: 1;
+      }
+
+      .glow-on-hover:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <div
+        class="left"
+        data-aos="zoom-in-right"
+        data-aos-delay="100"
+        data-aos-easing="ease-in-out"
+      >
+        <img src="./assets/images/codewithdipak.jpg" alt="" />
+      </div>
+
+      <div
+        class="right"
+        data-aos="zoom-in-left"
+        data-aos-delay="100"
+        data-aos-easing="ease-in-out"
+      >
+        <h1 style="color: #fff">Dipak <span> Sarvede</span></h1>
+        <p>
+          Hello! I'm Dipak Sarvade, a computer science & engineering college
+          student with a passion for web development. Currently, I'm expanding
+          my skills in HTML, CSS, and JavaScript while exploring various
+          frameworks such as React and Node.js. I'm always looking for new
+          challenges and opportunities to grow as a developer.
+        </p>
+        <!---
+            <div class="icon">
+                <img src="./assets/images/instagram (4).png"  alt="" >
+                <img src="./assets/images/telegram.png" alt="">
+                <img src="github.png" alt="">
+                <img src="linkedin (1).png" alt="">
+            </div> -->
+
+        <button style="color: white" class="glow-on-hover" type="button">
+          <a
+            href="https://d8it4huxumps7.cloudfront.net/uploads/attachements/user-resumes/67a49f77e3e82_Dipak_Resume_1_pdf.pdf"
+            ><samp style="color: white">Resume--></samp></a
+          >
+        </button>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
+
+<!-- 
+    Created By : Aman Yadav
+    Instagram  : curious_coder_aman
+
+    NOTE ==> Follow me for more coding related projects and stuffs:)
+ -->
